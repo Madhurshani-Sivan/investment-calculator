@@ -1,11 +1,14 @@
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
 
-const ResultsTable = () => {
+const ResultsTable = (props) => {
   return (
     <table className="result">
       <TableHead />
-      <TableBody />
+      <TableBody
+        data={props.data}
+        initialInvestment={props.initialInvestment}
+      />
     </table>
   );
 };
