@@ -1,5 +1,6 @@
 import { useState } from "react";
 import InputGroup from "./InputGroup";
+import classes from "./UserInput.module.css";
 
 const initialUserInput = {
   "current-savings": 10000,
@@ -34,7 +35,7 @@ const UserInput = (props) => {
   };
 
   return (
-    <form className="form" onSubmit={submitHandler}>
+    <form className={classes.form} onSubmit={submitHandler}>
       <InputGroup
         inputs={inputs.slice(0, 2)}
         onInputChange={inputChangeHandler}
@@ -45,11 +46,15 @@ const UserInput = (props) => {
         onInputChange={inputChangeHandler}
         userInput={userInput}
       />
-      <p className="actions">
-        <button type="reset" className="buttonAlt" onClick={resetHanlder}>
+      <p className={classes.actions}>
+        <button
+          type="reset"
+          className={classes.buttonAlt}
+          onClick={resetHanlder}
+        >
           Reset
         </button>
-        <button type="submit" className="button">
+        <button type="submit" className={classes.button}>
           Calculate
         </button>
       </p>

@@ -1,9 +1,10 @@
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
+import classes from "./ResultsTable.module.css";
 
 const ResultsTable = (props) => {
   return (
-    <table className="result">
+    <table className={classes.result}>
       <TableHead />
       <TableBody
         data={props.data}
