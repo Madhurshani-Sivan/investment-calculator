@@ -1,8 +1,6 @@
-const Input = (props) => {
-  const inputChangeHandler = (input, value) => {
-    console.log(input, value);
-  };
+import UserInput from "./UserInput";
 
+const Input = (props) => {
   return (
     <p>
       <label htmlFor={props.input.id}>{props.input.value}</label>
@@ -10,8 +8,9 @@ const Input = (props) => {
         type="number"
         id={props.input.id}
         onChange={(event) =>
-          inputChangeHandler(props.input.id, event.target.value)
+          props.onInputChange(props.input.id, event.target.value)
         }
+        value={props.userInput[props.input.id]}
       />
     </p>
   );
